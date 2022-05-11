@@ -37,17 +37,16 @@ class Gallery {
     }
 
     getRandomCivil() {
-        return this.civilImages[Math.floor(Math.random() * 5)]
+        return this.civilImages[Math.floor(Math.random() * this.civilImages.length)]
     }
 
     getRandomMilitary() {
-        return this.militaryImages[Math.floor(Math.random() * 5)]
+        return this.militaryImages[Math.floor(Math.random() * this.militaryImages.length)]
     }
 
     getAll() {
-        const selected = Math.floor(Math.random())
-        console.log(selected)
-            // return allGallery[Math.floor(Math.random() * 10)]
+        console.log([...this.civilImages, ...this.militaryImages]);
+        return [...this.civilImages, ...this.militaryImages]
     }
 }
 
@@ -83,5 +82,3 @@ class Painter {
 const aircrafts = new Gallery(civilAircrafts, militaryAircrafts);
 const helicopters = new Gallery(civilHelicopters, militaryHelicopter);
 const painter = new Painter();
-
-console.log(helicopters.allGallery)
